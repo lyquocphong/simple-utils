@@ -4,7 +4,6 @@ namespace LeadDeskTests;
 
 use LeadDesk\Utils;
 use PHPUnit\Framework\TestCase;
-use InvalidArgumentException;
 
 /**
  * @author Phong Ly <lyquocphong@gmail.com>
@@ -13,8 +12,8 @@ use InvalidArgumentException;
 class IsAnagramFunctionTest extends TestCase
 {
     /** 
-    * @var Utils
-    */
+     * @var Utils
+     */
     protected $utils;
 
     /**
@@ -27,8 +26,8 @@ class IsAnagramFunctionTest extends TestCase
         parent::setUp();
         $this->utils = new Utils();
     }
-    
-    
+
+
     /**
      * @covers ::isAnagram
      * @testdox Test the functionality of isAnagram
@@ -39,12 +38,12 @@ class IsAnagramFunctionTest extends TestCase
     {
         $word1 = 'SILENT';
         $word2 = 'LISTEN';
-        $actual = $this->utils->isAnagram($word1, $word2);        
+        $actual = $this->utils->isAnagram($word1, $word2);
         $this->assertTrue($actual);
 
         $word1 = 'ANAGRAM';
         $word2 = 'NAGARAM';
-        $actual = $this->utils->isAnagram($word1, $word2);        
+        $actual = $this->utils->isAnagram($word1, $word2);
         $this->assertTrue($actual);
     }
 

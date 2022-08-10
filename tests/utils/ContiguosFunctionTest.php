@@ -12,9 +12,7 @@ use InvalidArgumentException;
  */
 class ContiguosFunctionTest extends TestCase
 {
-    /** 
-    * @var Utils
-    */
+    /** @var Utils $utils */
     protected $utils;
 
     /**
@@ -27,8 +25,8 @@ class ContiguosFunctionTest extends TestCase
         parent::setUp();
         $this->utils = new Utils();
     }
-    
-    
+
+
     /**     
      * @testdox Test the functionality of contiguous
      *
@@ -36,12 +34,12 @@ class ContiguosFunctionTest extends TestCase
      */
     public function testFunctionality(): void
     {
-        $input = [-1, 1, 5, -6, 3];        
+        $input = [-1, 1, 5, -6, 3];
         $actual = $this->utils->contiguous($input);
         $expected = 6;
         $this->assertEquals($expected, $actual);
 
-        $input = [-2, 1, -3, 4, -1, 2, 1, -5, 4];        
+        $input = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
         $actual = $this->utils->contiguous($input);
         $expected = 6;
         $this->assertEquals($expected, $actual);
@@ -55,12 +53,12 @@ class ContiguosFunctionTest extends TestCase
      */
     public function testWithArrayHasOneItem(): void
     {
-        $input = [5];        
+        $input = [5];
         $actual = $this->utils->contiguous($input);
         $expected = 5;
         $this->assertEquals($expected, $actual);
 
-        $input = [2];        
+        $input = [2];
         $actual = $this->utils->contiguous($input);
         $expected = 2;
         $this->assertEquals($expected, $actual);
