@@ -7,7 +7,8 @@ use PHPUnit\Framework\TestCase;
 use InvalidArgumentException;
 
 /**
- * @covers LeadDesk\Utils
+ * @author Phong Ly <lyquocphong@gmail.com>
+ * @covers LeadDesk\Utils::isAnagram
  */
 class IsAnagramFunctionTest extends TestCase
 {
@@ -16,6 +17,11 @@ class IsAnagramFunctionTest extends TestCase
     */
     protected $utils;
 
+    /**
+     * The setup function, run before each test
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -26,6 +32,8 @@ class IsAnagramFunctionTest extends TestCase
     /**
      * @covers ::isAnagram
      * @testdox Test the functionality of isAnagram
+     *
+     * @return void
      */
     public function testFunctionality(): void
     {
@@ -43,6 +51,8 @@ class IsAnagramFunctionTest extends TestCase
     /**
      * @covers ::isAnagram
      * @testdox Test isAnagram with 2 words has difference length
+     *
+     * @return void
      */
     public function testWithDifferenceLength(): void
     {
@@ -62,6 +72,8 @@ class IsAnagramFunctionTest extends TestCase
     /** 
      * @covers ::isAnagram
      * @testdox Test the function isAnagram with 2 words with is difference character appearance
+     *
+     * @return void
      */
     public function testWithDifferenceCharacterOccur(): void
     {

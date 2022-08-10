@@ -7,7 +7,8 @@ use PHPUnit\Framework\TestCase;
 use InvalidArgumentException;
 
 /**
- * @covers LeadDesk\Utils
+ * @author Phong Ly <lyquocphong@gmail.com>
+ * @covers LeadDesk\Utils::contiguous
  */
 class ContiguosFunctionTest extends TestCase
 {
@@ -16,6 +17,11 @@ class ContiguosFunctionTest extends TestCase
     */
     protected $utils;
 
+    /**
+     * The setup function, run before each test
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -23,9 +29,10 @@ class ContiguosFunctionTest extends TestCase
     }
     
     
-    /**
-     * @covers ::contiguous
+    /**     
      * @testdox Test the functionality of contiguous
+     *
+     * @return void
      */
     public function testFunctionality(): void
     {
@@ -41,10 +48,12 @@ class ContiguosFunctionTest extends TestCase
     }
 
     /**
-     * @covers ::contiguous
-     * @testdox Test the functionality of contiguous
+     * @testdox Test contiguos function will return the value of first item
+     * in case the input array has only one item
+     *
+     * @return void
      */
-    public function testWithArrayHasOneValue(): void
+    public function testWithArrayHasOneItem(): void
     {
         $input = [5];        
         $actual = $this->utils->contiguous($input);
@@ -58,8 +67,9 @@ class ContiguosFunctionTest extends TestCase
     }
 
     /**
-     * @covers ::contiguous
      * @testdox Test the function contiguous throw exception when input is empty array
+     *
+     * @return void
      */
     public function testThrowExceptionWhenInputIsEmpty(): void
     {
