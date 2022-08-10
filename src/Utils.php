@@ -34,10 +34,6 @@ class Utils implements MaxSubarray, Anagram
          * https://alkeshghorpade.me/post/leetcode-maximum-subarray
          */
         for ($i = 1; $i < $count; $i++) {
-
-            /**
-             * We take the sum 
-             */
             $sumAtIndex = max((int) $array[$i], (int) $sumAtIndex + $array[$i]);
             $maxSum = max($maxSum, $sumAtIndex);
         }
