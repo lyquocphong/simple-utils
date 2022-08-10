@@ -19,7 +19,7 @@ class Utils implements MaxSubarray, Anagram
         /** @var int $sumAtIndex The sum at the current index **/
         $sumAtIndex = $array[0];
 
-        /** @var int $maxSum The maximum sum during the loop **/
+        /** @var int $maxSum The variable will memorize the maximum **/
         $maxSum = $array[0];
 
         /** @var int $count The length of the input **/
@@ -29,7 +29,15 @@ class Utils implements MaxSubarray, Anagram
             throw new InvalidArgumentException('The input must contain at least one element');
         }
 
+        /**
+         * The logic implement here follow the Kadane algorithm described in link below
+         * https://alkeshghorpade.me/post/leetcode-maximum-subarray
+         */
         for ($i = 1; $i < $count; $i++) {
+
+            /**
+             * We take the sum 
+             */
             $sumAtIndex = max((int) $array[$i], (int) $sumAtIndex + $array[$i]);
             $maxSum = max($maxSum, $sumAtIndex);
         }
@@ -65,20 +73,20 @@ class Utils implements MaxSubarray, Anagram
         /**
          * At first we need to keep track the occurrence of character in word 1
          */
-        for($i = 0; $i < $word1Length; $i++) {
-        	$character = $word1[$i];
+        for ($i = 0; $i < $word1Length; $i++) {
+            $character = $word1[$i];
             if (!isset($occurence[$character])) {
                 $occurence[$character] = 0;
             }
 
             $occurence[$character] += 1;
         }
-        
+
 
         /**
          * After that we need to check each character in word 2
          */
-        for($i = 0; $i < $word2Length; $i++) {
+        for ($i = 0; $i < $word2Length; $i++) {
             $character = $word2[$i];
             // In case character is not in the occurence table, it means this is not anagram
             if (!isset($occurence[$character])) {
