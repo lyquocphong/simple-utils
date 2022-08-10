@@ -1,0 +1,24 @@
+{
+    "name": "leaddesk/utils",
+    "description": "This is utils package from leaddesk",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Leaddesk\\": "src/",
+            "LeadDeskTests\\": "tests/",
+            "LeadDeskTasks\\": "tasks/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Phong Ly",
+            "email": "lyquocphong@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
